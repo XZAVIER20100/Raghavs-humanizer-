@@ -4,6 +4,7 @@
   --on-surface: #1a1b1f;
   --primary: #006d37;
   --primary-container: #2ecc71;
+  --outline: #e3e2e7;
   --text-muted: #86868b;
   --radius-lg: 24px;
 }
@@ -115,4 +116,39 @@ textarea {
   font-size: 24px;
   font-weight: 600;
   z-index: 100;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .app-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    padding: 16px;
+    border-right: none;
+    border-bottom: 1px solid var(--outline);
+    gap: 16px;
+  }
+
+  .main-content {
+    padding: 16px;
+  }
+
+  .panels {
+    grid-template-columns: 1fr; /* Stacks panels vertically */
+  }
+
+  .panel {
+    min-height: 300px;
+  }
+
+  h1 {
+    font-size: 32px !important;
+  }
+
+  .humanize-btn {
+    width: 100%; /* Make button full width on mobile for easier tapping */
+  }
 }

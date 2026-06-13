@@ -32,5 +32,7 @@ else:
 
 if __name__ == "__main__":
     import uvicorn
-    print("Starting Raghavs Humanizer at http://localhost:8000")
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    # Hugging Face Spaces uses port 7860 by default
+    port = int(os.environ.get("PORT", 7860))
+    print(f"Starting Raghav's Humanizer at http://0.0.0.0:{port}")
+    uvicorn.run(app, host="0.0.0.0", port=port, log_level="info")
